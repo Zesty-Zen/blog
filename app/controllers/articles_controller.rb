@@ -1,4 +1,6 @@
-class ArticlesController < ApplicationController
+ class ArticlesController < ApplicationController
+  http_basic_authenticate_with name: "Ibrahim", password: "0000", only: :destroy
+
   expose :articles, ->{ Article.all }
   expose :article
 
