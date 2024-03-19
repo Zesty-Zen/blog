@@ -1,8 +1,10 @@
  class ArticlesController < ApplicationController
   http_basic_authenticate_with name: "Ibrahim", password: "0000", only: :destroy
 
-  expose :articles, ->{ Article.all }
-  expose :article
+
+  exposure_config :whole_table, fetch: ->{ Article.all }
+  expose :articles, with: :whole_table
+  expose! :article
 
   def create
     if article.save
