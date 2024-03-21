@@ -1,5 +1,10 @@
-<h1>Articles List</h1>
-<h4>Our Blog has <%= Article.public_count %> Articles and counting </h4>
+<h1>
+  Articles List
+</h1>
+
+<h4>
+  Our Blog has <%= Article.public_count %> Articles and counting
+</h4>
 
 <ul>
   <% articles.each do |article| %>
@@ -11,12 +16,16 @@
   <% end %>
 </ul>
 
- <%= link_to "New Article", new_article_path %> 
+<%= link_to "New Article", new_article_path %> 
+
 <br>
+
 <% if user_signed_in? %>
   <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete } %>
+
 <% else %>
   <%= link_to 'Sign in', new_user_session_path %>
+
 <% end %>
 
 

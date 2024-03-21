@@ -2,8 +2,8 @@
   http_basic_authenticate_with name: "Ibrahim", password: "0000", only: :destroy
 
 
-  exposure_config :whole_table, fetch: ->{ Article.all }
-  expose :articles, with: :whole_table
+  # exposure_config :whole_table, fetch: ->{ Article.all }
+  expose :articles, ->{ Article.all }
   expose! :article
 
   def create
