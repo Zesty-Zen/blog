@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     
-    http_basic_authenticate_with name: "Ibrahim", password: "0000", only: :destroy
+    # http_basic_authenticate_with name: "Ibrahim", password: "0000", only: :destroy
     
     expose :article
     expose :comments , -> { article.comments }
