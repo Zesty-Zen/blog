@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
     expose :comment
 
     def create
-        # buybug
         comment.article_id = article.id
         if comment.save
             redirect_to article_path(article)
